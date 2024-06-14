@@ -41,9 +41,7 @@ export default function Home({ data }) {
   return (
     <div className="container">
      
-      {/* {product.map((item, index) => (
-        <div key={index}>{item.title}</div>
-      ))} */}
+      
     </div>
   );
 }
