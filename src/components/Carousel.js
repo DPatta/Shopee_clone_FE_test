@@ -2,7 +2,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-export default function Carousel({ props }) {
+import { useState } from "react";
+export default function Carousel({ }) {
+  const [images, setImages] = useState([
+    {id: 1 ,image : 'https://cf.shopee.co.th/file/th-50009109-96ccd9c4dc80c25b6546ef522d21428a_xxhdpi'},
+    {id: 2 ,image : 'https://cf.shopee.co.th/file/th-50009109-96ccd9c4dc80c25b6546ef522d21428a_xxhdpi'},
+    {id: 3 ,image : 'https://cf.shopee.co.th/file/th-50009109-96ccd9c4dc80c25b6546ef522d21428a_xxhdpi'},
+    {id: 4 ,image : 'https://cf.shopee.co.th/file/th-50009109-96ccd9c4dc80c25b6546ef522d21428a_xxhdpi'},
+    {id: 5 ,image : 'https://cf.shopee.co.th/file/th-50009109-96ccd9c4dc80c25b6546ef522d21428a_xxhdpi'},
+    {id: 6 ,image : 'https://cf.shopee.co.th/file/th-50009109-96ccd9c4dc80c25b6546ef522d21428a_xxhdpi'},
+  ]);
   const settings = {
     dots: true,
     infinite: true,
@@ -14,15 +23,14 @@ export default function Carousel({ props }) {
   };
 
   return (
-    <div>
-      <h2> Image Carousel </h2>
+    <div className="carousel-block">
       <Slider {...settings}>
-        {props.images.map((image, index) => (
+        {images.map((image, index) => (
           <div key={index}>
             <Image
-              src={image}
+              src={image.image}
               alt={`Slide ${index}`}
-              width={200}
+              width={750}
               height={200}
             />
           </div>
